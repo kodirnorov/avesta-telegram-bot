@@ -11,7 +11,7 @@ TOKEN = os.getenv("BOT_TOKEN")
 IPO_CHAT_ID = -1003827093183
 GENERAL_CHAT_ID = -1003827093183
 
-TEAM_MEMBERS = ["Ali", "Valeria", "John"]
+TEAM_MEMBERS = ["Adhamjon", "Arnold", "Dimitriy"]
 lead_counter = 0
 
 # ===== GOOGLE SHEETS =====
