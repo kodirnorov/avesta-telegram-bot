@@ -15,9 +15,10 @@ scope = [
     "https://www.googleapis.com/auth/drive"
 ]
 creds_json = os.getenv("GOOGLE_CREDENTIALS")
-print("DEBUG CREDS:", creds_json[:50] if creds_json else "EMPTY")
-
 creds_dict = json.loads(creds_json)
+
+# ✅ FIX ONLY THE PRIVATE KEY
+creds_dict["private_key"] = creds_dict["private_key"].replace("\\n", "\n")
 
 creds = Credentials.from_service_account_info(creds_dict, scopes=scope)
 client = gspread.authorize(creds)
