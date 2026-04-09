@@ -1,3 +1,5 @@
+import json
+import os
 from telegram import Update, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 import gspread
@@ -12,7 +14,13 @@ scope = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
 ]
-creds = Credentials.from_service_account_file("credentials.json", scopes=scope)
+google_credentials_json = os.environ.get("GOOGLE_CREDENTIALS")
+if not google_credentials_json:
+    raise EnvironmentError(
+        "Missing required environment variable: GOOGLE_CREDENTIALS. "
+        "Set it to the contents of your Google service account JSON."
+    )
+creds = Credentials.from_service_account_info(json.loads(google_credentials_json), scopes=scope)
 client = gspread.authorize(creds)
 sheet = client.open("Avesta Leads").sheet1
 
