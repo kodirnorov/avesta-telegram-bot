@@ -117,7 +117,14 @@ def get_contact_markup(lang):
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Welcome! Please choose your language:",
+        "Avesta Investment Group-ga xush kelibsiz!
+         Iltimos, tilni tanlang:
+
+         Добро пожаловать в Avesta Investment Group!
+         Пожалуйста, выберите язык:
+
+         Welcome to Avesta Investment Group!
+         Please choose your language:",
         reply_markup=language_markup
     )
 
