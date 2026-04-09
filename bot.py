@@ -3,8 +3,8 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 import gspread
 from google.oauth2.service_account import Credentials
 
-
-TOKEN = "TOKEN_HERE"
+import os
+TOKEN = os.getenv("BOT_TOKEN")
 IPO_CHAT_ID = -1003827093183
 GENERAL_CHAT_ID = -1003827093183  # replace later if different group
 
