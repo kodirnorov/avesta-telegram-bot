@@ -135,7 +135,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 🌐 {lang}
 
 💬 {lead.get("message", "")}
-
+🔗 @{user.username if user.username else "no_username"}
 📞 {phone}
 
 🆔 CHAT_ID: {update.message.chat_id}
